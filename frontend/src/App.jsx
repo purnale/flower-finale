@@ -4,19 +4,23 @@ import Header from "./home/containers/Header";
 import Footer from "./home/containers/Footer";
 // import ProductDetails from "./productDetails/ProductDetails";
 import { Outlet } from "react-router-dom";
-import "./App.css";
-import SignUp from "./signup/SignUp";
+import './App.css';
 import { useState } from "react";
+import SignIn from "./pages/SignIn";
 const App = () => {
-  const [isSignUp, setSignUp] = useState(false);
+
+  const [isSignIn, setIsSingIn] = useState(true);
+
+
   return (
     <>
       <Header />
       {/* <ProductDetails /> */}
 
-      {isSignUp === true ?<> <Outlet />    <Footer /> </> : <SignUp setSignUp= {setSignUp} />}
+      {isSignIn === true ? <Outlet /> : <SignIn setIsSignIn={setIsSingIn} />}
 
-  
+
+      <Footer />
     </>
   );
 };

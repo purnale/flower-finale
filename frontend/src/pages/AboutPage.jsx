@@ -1,7 +1,9 @@
-import video from "../assets/video (2160p).mp4";
-const AboutPage = () => {
+
+
+import video from "../../assets/video (2160p).mp4";
+const AboutUs = () => {
   return (
-    <section className="about pt-32" id="about">
+    <section className="about pt-40" id="about">
       <h1 className="heading">
         <span> about </span> us
       </h1>
@@ -26,13 +28,11 @@ const AboutPage = () => {
             atque error suscipit voluptatum minus, illum quos est consequuntur
             accusantium, libero necessitatibus ad fuga.
           </p>
-          <a href="#" className="btn">
-            learn more
-          </a>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutPage
+export default AboutUs;
+

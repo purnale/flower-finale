@@ -435,10 +435,8 @@ header .fa-bars {
   flex: 1 1 40rem;
 }
 
-.contact .row .image img{
-  width: 50rem;
-  height: 40rem;
-  border: 2px solid rgb(59, 45, 45) ;
+.contact .row .image iframe{
+  width: 100%;
 }
 
 .contact .row form .box {
@@ -578,12 +576,4 @@ header .fa-bars {
 
 .footer .credit span {
   color: var(--pink);
-}
-
-.bg-img{
-  background-image: url(../assets/istockphoto-1385988208-170667a.jpg) no-repeat ; 
-  border: 2px solid black;
-  width: auto;
-  height: 100vh;
-
 }

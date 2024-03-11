@@ -26,7 +26,7 @@ const AddFlower = () => {
     try {
       const response = await axios.post(api, formData);
 
-      if (response.status === 200) {
+      if (response.status === 201) {
         alert("Flower uploaded successfully!");
         setFormData({
           discount: "",

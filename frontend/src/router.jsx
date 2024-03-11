@@ -20,16 +20,28 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/productpage",
+        path: "/productpage/:id",
         element: <ProductPage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:8000/api/flowers/${params.id}`)
+            .then((res) => {
+              if (!res.ok) {
+                throw new Error("Failed to fetch flower data");
+              }
+              return res.json();
+            })
+            .catch((error) => {
+              console.error("Error fetching flower data:", error);
+              return null; // Return null in case of error
+
+            }),
       },
       {
         path: "/contactpage",
         element: <ContaactPage />,
-      },
-      {
+      }, {
         path: "/aboutpage",
-        element: <AboutPage/>,
+        element: <AboutPage />,
       },
     ],
   },
