@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const dotenv = require("dotenv").config();
 
-// const __dirname = path.resolve();
+const __dirname = path.resolve();
 
 // custom port
 const PORT = process.env.PORT || 3001;
