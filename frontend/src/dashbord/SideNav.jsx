@@ -15,7 +15,7 @@ const SideNav = () => {
         <Link to="/">Go Home</Link>
         <Link to="/dashbord/addflower">Add Flower</Link>
         <Link to="/dashbord/manageflower">Manage Flowers</Link>
-        <Link to="/">Sign Out</Link>
+       
       </nav>
 
       <div className="icons">

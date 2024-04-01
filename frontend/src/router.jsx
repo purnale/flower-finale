@@ -8,6 +8,8 @@ import HomePage from "./pages/HomePage.jsx";
 import ProductPage from "./pages/ProductPage.jsx";
 import ContaactPage from "./pages/ContaactPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import SignIn from "./pages/SignIn.jsx";
 // import ProductDetails from "./productDetails/ProductDetails.jsx";
 
 const router = createBrowserRouter([
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
         path: "/productpage/:id",
         element: <ProductPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:8000/api/flowers/${params.id}`)
+          fetch(`/api/flowers/${params.id}`)
             .then((res) => {
               if (!res.ok) {
                 throw new Error("Failed to fetch flower data");
@@ -33,17 +35,26 @@ const router = createBrowserRouter([
             .catch((error) => {
               console.error("Error fetching flower data:", error);
               return null; // Return null in case of error
-
             }),
       },
       {
         path: "/contactpage",
         element: <ContaactPage />,
-      }, {
+      },
+      {
         path: "/aboutpage",
         element: <AboutPage />,
       },
+   
     ],
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/signin",
+    element: <SignIn />,
   },
   // {
   //   path: "/product",
@@ -61,7 +72,7 @@ const router = createBrowserRouter([
         path: "/dashbord/editflower/:id",
         element: <EditFlower />,
         loader: ({ params }) =>
-          fetch(`http://localhost:8000/api/flowers/${params.id}`)
+          fetch(`/api/flowers/${params.id}`)
             .then((res) => {
               if (!res.ok) {
                 throw new Error("Failed to fetch flower data");

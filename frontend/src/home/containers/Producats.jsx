@@ -10,7 +10,7 @@ const Products = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/flowers");
+        const response = await fetch("/api/flowers");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

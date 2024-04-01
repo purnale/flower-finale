@@ -10,7 +10,7 @@ const AddFlower = () => {
     price: "",
   });
 
-  const api = "http://localhost:8000/api/flowers";
+  const api = "/api/flowers";
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

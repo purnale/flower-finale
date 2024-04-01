@@ -2,7 +2,7 @@ import { Table } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const api = "http://localhost:8000/api/flowers";
+const api = "/api/flowers";
 
 const ManageFlowers = () => {
   const [allFlowers, setAllFlowers] = useState([]);

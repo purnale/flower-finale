@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const EditFlower = () => {
   const { id } = useParams();
-  const api = `http://localhost:8000/api/flowers/${id}`;
+  const api = `/api/flowers/${id}`;
 
   const [flowerData, setFlowerData] = useState({
     flowerTitle: "",

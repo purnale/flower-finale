@@ -7,20 +7,20 @@ import review3 from "../../assets/review_1.jpg";
 const Review = () => {
   const review = [
     {
-      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nam maiores iusto laudantium blanditiis molestias, voluptas aboriosam veniam! Laudantium neque at vitae, quidem reiciendis natus quisquam sit dolor facilis quis.",
+      para: "I stumbled upon this flower website while searching for a perfect bouquet for my mom's birthday. I must say, I was blown away by the variety they offer! The website is so easy to navigate, and I found exactly what I was looking for within minutes.",
       name: "sarala purnale",
       status: "happy customer",
       img: review1,
     },
     {
-      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nam maiores iusto laudantium blanditiis molestias, voluptas aboriosam veniam! Laudantium neque at vitae, quidem reiciendis natus quisquam sit dolor facilis quis.",
+      para: "As someone who adores flowers, I've tried numerous online flower shops, but none have impressed me as much as this one. From the moment I landed on their website, I was greeted with stunning visuals and a user-friendly interface. ",
       name: "supriya mule",
       status: "happy customer",
       img: review2,
     },
     {
-      para: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nam maiores iusto laudantium blanditiis molestias, voluptas aboriosam veniam! Laudantium neque at vitae, quidem reiciendis natus quisquam sit dolor facilis quis.",
-      name: "sarala purnale",
+      para: "I recently ordered flowers for my best friend's bridal shower from this website, and I couldn't be happier with my purchase. Not only were the flowers absolutely gorgeous and exactly as pictured, but the entire ordering process was seamless. ",
+      name: "Bhavana purnale",
       status: "happy customer",
       img: review3,
     },

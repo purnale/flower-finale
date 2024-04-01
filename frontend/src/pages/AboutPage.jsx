@@ -1,5 +1,3 @@
-
-
 import video from "../../assets/video (2160p).mp4";
 const AboutUs = () => {
   return (
@@ -17,16 +15,22 @@ const AboutUs = () => {
         <div className="content">
           <h3>why choose us?</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore
-            numquam ullam enim, earum molestias adipisci necessitatibus corporis
-            aliquam est officiis alias? Facilis, numquam molestiae! Est at quod
-            unde harum
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-            voluptates sed dolore exercitationem doloremque laudantium, facere
-            atque error suscipit voluptatum minus, illum quos est consequuntur
-            accusantium, libero necessitatibus ad fuga.
+            When you choose our flower selling website, you're selecting more
+            than just a place to buy blooms – you're opting for an experience
+            marked by freshness, variety, and convenience. Our commitment to
+            sourcing the freshest flowers ensures that each bouquet is a vibrant
+            masterpiece that will brighten any occasion. With a wide selection
+            of arrangements ranging from elegant bouquets to charming
+            centerpieces, we cater to every taste and preference. Our
+            user-friendly website makes browsing and ordering a seamless
+            process, allowing you to find the perfect floral expression with
+            ease. Moreover, our reliable delivery service ensures that your
+            thoughtful gift arrives on time, every time, adding a touch of joy
+            to your recipient's day. Backed by exceptional customer service,
+            competitive pricing, and a dedication to customer satisfaction, we
+            are your trusted partner in creating memorable moments with flowers.
+            Choose us for an unparalleled floral experience that combines
+            quality, convenience, and heartfelt beauty.
           </p>
         </div>
       </div>
@@ -35,4 +39,3 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
-

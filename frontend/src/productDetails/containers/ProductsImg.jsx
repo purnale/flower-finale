@@ -4,7 +4,7 @@ import { FaStar } from "react-icons/fa";
 
 const ProductsImg = () => {
   const { id } = useParams();
-  const api = `http://localhost:8000/api/flowers/${id}`;
+  const api = `/api/flowers/${id}`;
 
   const [flowerData, setFlowerData] = useState({
     flowerTitle: "",
@@ -27,8 +27,6 @@ const ProductsImg = () => {
       .catch((error) => console.error("Error fetching flower data:", error));
   }, [api]);
 
-
-
   return (
     <section className="about" id="about">
       <h1 className="heading">
@@ -45,7 +43,9 @@ const ProductsImg = () => {
           <div className="mt-4">
             <span className="text-gray-700">Price: </span>
             <span className="text-xl font-semibold text-indigo-600">
-              ₹ {flowerData.price - flowerData.price * (flowerData.discount / 100)}
+              ₹{" "}
+              {flowerData.price -
+                flowerData.price * (flowerData.discount / 100)}
             </span>
           </div>
           <div className="mt-4">
@@ -61,10 +61,12 @@ const ProductsImg = () => {
               ))}
             </div>
           </div>
-          <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-          <a href="#" className="btn">
-            Add To Cart
-          </a>
+          <p>
+            In gardens and meadows, the flower reigns supreme, With petals soft
+            as whispers, in hues that gleam. From the delicate rose to the proud
+            sunflower's grace, Each bloom tells a story, each one finds its
+            place.
+          </p>
           <a href="#" className="btn">
             Buy Now
           </a>
@@ -75,4 +77,3 @@ const ProductsImg = () => {
 };
 
 export default ProductsImg;
-

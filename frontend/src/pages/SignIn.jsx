@@ -1,81 +1,64 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom'; // Import useHistory hook for navigation
+import useAuth from '../hooks/useAuth'; // Import custom hook
 
-import React, { useState } from "react";
+const SignIn = () => {
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
+  const { login } = useAuth(); // Initialize useAuth hook to handle authentication
+  const navigate = useNavigate();
 
-const SignIn = ({ setIsSignIn }) => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  const [error, setError] = useState("");
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const { email, password } = formData;
-
-    // Check if the entered credentials match the hardcoded username and password
-    if (email === "admin@gmail.com" && password === "bhakti@123") {
-      setIsSignIn(true); // Update the state to indicate that the user is signed in
-    } else {
-      setError("Invalid username or password");
+    try {
+      const response = await axios.post('/api/auth/signin', formData);
+      if (response && response.data && response.data.token) {
+        login(response.data.token); // Call login function from useAuth hook
+        navigate('/dashbord');
+      } else {
+        setError('Invalid response from server');
+      }
+    } catch (error) {
+      console.error('Sign-in Error:', error.response.data.error);
+      setError(error.response.data.error);
     }
   };
 
-  // Function to handle form input changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  // If user is already logged in, redirect to main website
-
-
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <div className="max-w-md w-full bg-white p-8 shadow-lg rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Sign In</h2>
+    <div className="flex justify-center items-center h-screen">
+      <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg">
+        <h2 className="text-2xl mb-4">Sign In</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="mt-1 px-4 py-2 w-full border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              className="mt-1 px-4 py-2 w-full border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 transition duration-300"
-          >
-            Sign In
-          </button>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+            className="block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+          />
+          <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300">Sign In</button>
         </form>
+        <p className="mt-4">Don't have an account? <Link to="/signup" className="text-blue-500">Sign Up</Link></p>
       </div>
     </div>
   );
 };
 
 export default SignIn;
-
